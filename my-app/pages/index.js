@@ -1,39 +1,16 @@
-import React, { useState, useEffect } from 'react'
-import Image from 'next/image'
 import styles from '../styles/Home.module.css'
+import Link from 'next/link'
 
 export default function Home() {
 
-  const [images, setImages] = useState()
-
-  useEffect(() => {
-    fetch('https://jsonplaceholder.typicode.com/photos?_limit=10')
-      .then(res => res.json())
-      .then(json => {
-        console.log(json)
-        setImages(json)
-      })
-  }, [])
   return (
-    <div>
-      <h1>SSR</h1>
-      <div className={styles.container}>
-      { 
-        images?.map((image, index) => {
-          return (
-            <div>
-              <div className={styles.images}>
-                <img
-                  src={image.thumbnailUrl}
-                  width={150}
-                  height={150}
-                />
-              </div>
-              <div>{image.title}</div>
-            </div>
-          )
-        })
-      }
+    <div className={styles.main}>
+      <div>
+        <p>NextJs로 ssr과 csr을 비교하기 위해 만든 사이트입니다.</p>
+        <div className={styles.router}>
+          <span><Link href='/ssr'>Server Side Rendering</Link></span>
+          <span><Link href='/csr'>Client Side Rendering</Link></span>
+        </div>
       </div>
     </div>
   )

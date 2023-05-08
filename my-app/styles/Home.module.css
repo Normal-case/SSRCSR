@@ -1,6 +1,36 @@
+.main {
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+}
+
+.router {
+  display: flex;
+  justify-content: space-between;
+}
+
+.router span {
+  color: #32A4FF;
+  font-size: 18px;
+}
+
+.body {
+  text-align: center;
+}
+
+.contents {
+  display: flex;
+  justify-content: center;
+}
+
 .container {
   display: grid;
   grid-template-columns: 300px 300px 300px 300px 300px;
+}
+
+.card {
+  width: 170px;
+  margin: 30px auto;
 }
 
 .images {
